@@ -11,21 +11,21 @@ const gifStages = [
 
 const noMessages = [
     "No",
-    "Are you positive? 🤔",
-    "Pookie please... 🥺",
-    "If you say no, I will be really sad...",
-    "I will be very sad... 😢",
-    "Please??? 💔",
-    "Don't do this to me...",
-    "Last chance! 😭",
-    "You can't catch me anyway 😜"
+    "Шынымен ба? Тағы бір ойланшы 🤔",
+    "Балапан, бассай... 🥺",
+    "Егер «жоқ» десең, қатты ренжимін...",
+    "Өте қатты мұңаямын... 😢",
+    "Өтініш??? 💔",
+    "Маған бұлай істеме...😭",
+    "Соңғы мүмкіндік! 😭",
+    "Қалай болғанда да, енді мені ұстай алмайсың 😜"
 ]
 
 const yesTeasePokes = [
-    "try saying no first... I bet you want to know what happens 😏",
-    "go on, hit no... just once 👀",
-    "you're missing out 😈",
-    "click no, I dare you 😏"
+    "Алдымен «жоқ» деп көр... сосын не болатынын өзің көресің 😉",
+    "Ал, «жоқ» деп көрші... бір-ақ рет 👀",
+    "Мүмкіндігіңді жіберіп алып жатырсың 😈",
+    "«Жоқ» деп көрші... жүрегің шыдай ма екен? 😌"
 ]
 
 let yesTeasedCount = 0
@@ -109,7 +109,7 @@ function handleNoClick() {
     swapGif(gifStages[gifIndex])
 
     // Runaway starts at click 5
-    if (noClickCount >= 5 && !runawayEnabled) {
+    if (noClickCount >= noMessages.length - 1 && !runawayEnabled) {
         enableRunaway()
         runawayEnabled = true
     }
