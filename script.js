@@ -92,8 +92,12 @@ function handleNoClick() {
     noBtn.textContent = noMessages[msgIndex]
 
     // Grow the Yes button bigger each time
+    let scaleFactor = 1.35
+    if (window.innerWidth < 500) {
+        scaleFactor = 1.15
+    }
     const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize)
-    yesBtn.style.fontSize = `${currentSize * 1.35}px`
+    yesBtn.style.fontSize = `${Math.min(currentSize * scaleFactor, 36)}px`
     const padY = Math.min(18 + noClickCount * 5, 60)
     const padX = Math.min(45 + noClickCount * 10, 120)
     yesBtn.style.padding = `${padY}px ${padX}px`
